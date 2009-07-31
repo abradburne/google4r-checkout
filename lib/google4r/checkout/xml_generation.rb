@@ -194,6 +194,15 @@ module Google4R #:nodoc:
           analytics_element.text = command.analytics_data
         end
 
+        # <rounding-policy>
+        if not command.rounding_policy_mode.nil? then
+          rounding_policy = flow_element.add_element('rounding-policy')
+          rounding_policy.add_element('mode').text = command.rounding_policy_mode
+          if not command.rounding_policy_rule.nil? then
+            rounding_policy.add_element('rule').text = command.rounding_policy_rule
+          end
+        end
+                
       end
       
       # adds the tax-tables to the parent xml element

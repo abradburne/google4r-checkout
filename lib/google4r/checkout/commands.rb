@@ -231,6 +231,10 @@ module Google4R #:nodoc:
       # see: http://code.google.com/apis/checkout/developer/checkout_analytics_integration.html
       attr_accessor :analytics_data
       
+      # Allow the Google Checkout rounding policy mode to be set (optional).
+      attr_accessor :rounding_policy_mode
+      attr_accessor :rounding_policy_rule
+      
       # Generates the XML for this CheckoutCommand.
       def to_xml
         CheckoutCommandXmlGenerator.new(self).generate
